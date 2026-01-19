@@ -1,0 +1,23 @@
+#Install Java JDK
+sudo yum install java-21-amazon-corretto-devel -y
+
+#Download Bamboo
+sudo wget https://www.atlassian.com/software/bamboo/downloads/binary/atlassian-bamboo-12.1.0.tar.gz
+
+#Unzip Bamboo
+sudo tar -xvf atlassian-bamboo-12.1.0.tar.gz
+
+#Create Bamboo Home Directory
+sudo mkdir bamboo-home
+
+#Renaming Bamboo
+sudo mv atlassian-bamboo-12.1.0 bamboo
+cd bamboo
+
+#Setting Bamboo Home Directory Path
+cd atlassian-bamboo/WEB-INF/classes/
+sudo vi bamboo-init.properties
+
+#Starting Bamboo
+cd bin/
+sudo sh start-bamboo.sh 
