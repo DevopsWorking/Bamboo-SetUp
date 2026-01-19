@@ -1,0 +1,15 @@
+#Edit Files for accessing postgres from bamboo - Primary Configuration File
+
+**Path** :           vi /var/lib/pgsql/data/postgresql.conf
+**Uncomment Line** : listen_addresses = 'localhost’
+
+# Authentication
+**Path** :  vi /var/lib/pgsql/data/pg_hba.conf
+**Add** :   host     all     all     0.0.0.0/0     md5
+sudo systemctl restart postgresql
+
+
+#Creating Bamboo user and Bamboo Database
+CREATE USER bamboouser WITH PASSWORD 'StrongBambooDBPassword';
+CREATE DATABASE bamboo OWNER bamboouser;
+GRANT ALL PRIVILEGES ON DATABASE bamboo TO bamboouser;
