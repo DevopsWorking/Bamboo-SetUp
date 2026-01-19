@@ -1,0 +1,12 @@
+#Bamboo Server Installation Pre-requiste on Amazon Linux 2023
+
+#Install Postgres
+sudo dnf install -y postgresql16 postgresql16-server
+
+#SetUp Postgres
+sudo postgresql-setup --initdb
+
+#Starting and Enabling Postgres
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+sudo systemctl status postgresql
